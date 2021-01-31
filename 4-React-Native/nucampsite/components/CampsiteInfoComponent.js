@@ -28,7 +28,8 @@ class CampsiteInfo extends Component{
 
     static navigationOptions = {
         title: 'Campsite Information'
-    }
+    };
+
     render() {
         const campsiteId = this.props.navigation.getParam('campsiteId');
         const campsite = this.state.campsites.filter(campsite => campsite.id === campsiteId)[0];
