@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+
+    <link rel="stylesheet" href="css/survey.css">
+</head>
+<body>
+    <h1>Survey</h1>
+
+    <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method='post' class='survey-form'>
+        <fieldset>
+            <legend>Your Information</legend>
+            <div>
+                <label for='firstName'>First Name:</label>
+                <input type="text" name='firstName' placeholder='Your First Name' id='firstName'/>
+            </div>
+            <div>
+                <label for='lastName'>Last Name:</label> 
+                <input type="text" name='lastName' placeholder='Your Last Name' id='lastName'/>
+            </div>
+            <div>
+                <label for='email'> Email: </label>
+                <input type="email" name="email" placeholder="Your Email Address" id='email'/>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Survey Questions</legend>
+            <div>
+                Favorite Sport: 
+                <input type="radio" name='sport' value='baseball' id='baseball'/> 
+                <label for="baseball">Baseball</label>
+                <input type="radio" name="sport" value='rugby' id='rugby'/> 
+                <label for="rugby">Rugby</label>
+                <input type="radio" name="sport" value='snowboarding' id='snowboarding' /> 
+                <label for="snowboarding">Snowboarding</label>
+            </div>
+            <div>
+                Favorite Pet: 
+                <input type="checkbox" name="pets" value='cat' id='cat'/> 
+                <label for="cat">Cat</label>
+                <input type="checkbox" name="pets" value='dog' id='dog'/> 
+                <label for="dog">Dog</label>
+                <input type="checkbox" name="pets" value='iguana' id='iguana'/> 
+                <label for="iguana">Iguana</label>
+            </div>
+        </fieldset>
+        <input type="submit" id='submit-btn'>
+    </form>
+</body>
+</html>

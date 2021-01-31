@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Guessing Game</title>
+</head>
+<body>
+    <h1 id='title'>Color Guessing Game</h1>
+
+    <button type='button' onclick='runGame()'>Start Game</button>
+
+    <script>
+        const COLORS_ARRAY = ['blue', 'cyan', 'gold', 'gray', 'green', 'magenta', 'orange', 'red', 'white', 'yellow'];
+
+        // Runs game
+        function runGame() {
+            let guess = '';
+            let correct = false;
+            let numTries = 0;
+
+            const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length); // check if correct
+            const target = COLORS_ARRAY[targetIndex];
+            console.log(target, targetIndex);
+
+            do {
+                guess = prompt('I am thinking of one of these colors: \n\n' + COLORS_ARRAY.sort().join(', ') + '\n\nWhat color am I thinking of?\n').toLowerCase();
+
+                if(guess === null) {
+                    // ends game
+                    alert('YOU HAVE EXITED THE GAME');
+                    console.log('YOU HAVE EXITED THE GAME');
+                    return;
+                }
+                numTries++;
+
+                correct = checkGuess(guess, target, numTries);
+            } while(!correct)
+
+            alert('Congratulations! You have guessed the color!\n\nIt took you ' + numTries +' guesses to finish the game!\n\nHit OK to see the color in the background.');
+            document.body.style.background = guess;
+        }
+
+        // checks if guessed color is correct or not
+        function checkGuess(guess, target, numTries) {
+            let correct = false;
+
+            if(!COLORS_ARRAY.includes(guess)) {
+                console.log('color chose does not exist: ' + guess);
+                alert("Sorry, I don't recognize your color.\n\n Please try again.");
+            } else if (guess > target){
+                alert('Sorry, your guess is incorrect.\n\nHint: your color is alphabetically higher than mine.\n\nPlease try again.');
+                console.log('you should go lower');
+            } else if (guess < target) {
+                alert('Sorry, your guess is incorrect.\n\nHint: your color is alphabetically lower than mine.\n\nPlease try again.');
+                console.log('You should go higher');
+            } else {
+                correct = true;
+            }
+
+            return correct;
+        }
+    </script>
+</body>
+</html>

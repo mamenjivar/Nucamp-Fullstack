@@ -1,0 +1,13 @@
+#submit-btn {
+    background: green;
+    color: white;;
+}
+
+h1 {
+    text-align: center;
+}
+
+.survey-form {
+    width: 80%;
+    margin: auto;
+}

@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+
+
+        .container {
+            margin-top: 150px;
+            border: 1px solid blue;
+        }
+
+        .row {
+            border: 1px solid yellow;
+        }
+
+        .row div {
+            border: 1px solid red;
+        }
+    </style>
+    <title>Bootstrap Grid Example</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- as many rows you -->
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+            <div class="col">5</div>
+            <div class="col">6</div>
+            <div class="col">7</div>
+            <div class="col">8</div>
+            <div class="col">9</div>
+            <div class="col">10</div>
+            <div class="col">11</div>
+            <div class="col">12</div>
+        </div>
+
+        <div class="row">
+            <div class="col">1</div>
+        </div>
+        <div class="row">
+            <div class="col-4">1</div>
+            <div class="col-8">2</div>
+        </div>
+
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col col-md-6 col-lg-8">2</div>
+            <div class="col">3</div>
+        </div>
+    </div>
+
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
